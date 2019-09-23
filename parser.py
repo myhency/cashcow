@@ -80,9 +80,11 @@ def crawler(maxpage,query,s_date,e_date):
     
     while page < maxpage_t:
     
-        print(page)
+        # print(page)
     
         url = "https://search.naver.com/search.naver?where=news&query=" + query + "&sort=0&ds=" + s_date + "&de=" + e_date + "&nso=so%3Ar%2Cp%3Afrom" + s_from + "to" + e_to + "%2Ca%3A&start=" + str(page)
+
+        # url = "https://search.daum.net/search?w=news&q=" + query + "&sd=" + s_from + "&ed=" + e_to + "&DA=PGD&p=" + str(page)
         
         print(url)
 
@@ -96,6 +98,7 @@ def crawler(maxpage,query,s_date,e_date):
             try :
                 #print(urls["href"])
                 if urls["href"].startswith("https://news.naver.com"):
+                # if urls["href"].startswith("http://v.media.daum.net/"):
                     #print(urls["href"])
                     news_detail = get_news(urls["href"])
                         # pdate, pcompany, title, btext
